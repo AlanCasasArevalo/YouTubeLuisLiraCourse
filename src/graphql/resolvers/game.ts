@@ -1,5 +1,5 @@
 import {IResolvers} from '@graphql-tools/utils'
-const game: IResolvers = {
+const gameResolver: IResolvers = {
     Query: {
         gameHello() {
             return 'HOLAAAAAAAAAAA'
@@ -7,4 +7,4 @@ const game: IResolvers = {
     }
 }
 
-export default game
+export default gameResolver

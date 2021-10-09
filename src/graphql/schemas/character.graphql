@@ -1,7 +1,5 @@
 type Query {
-    "El campo no puede volver como nulo"
-    hello: String!
-    getCharacter: [Character]
+    getCharacters: [Character]
 }
 
 type Character {

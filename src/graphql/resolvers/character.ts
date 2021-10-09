@@ -1,11 +1,11 @@
 import {IResolvers} from '@graphql-tools/utils'
 import { mocks } from '../../mock'
-const characters: IResolvers = {
+const charactersResolver: IResolvers = {
     Query: {
-        getCharacter() {
+        getCharacters() {
             return mocks.characters
         }
     }
 }
 
-export default characters
+export default charactersResolver
