@@ -347,3 +347,4 @@ dist
 .webpack/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,intellij,intellij+all,intellij+iml
+/package-lock.json
