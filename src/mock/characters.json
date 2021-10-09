@@ -2,16 +2,16 @@
   {
     "id": 1,
     "name": "hola",
-    "race": "no"
+    "race": "HYLIAN"
   },
   {
     "id": 2,
     "name": "ja",
-    "race": "as"
+    "race": "GERUDO"
   },
   {
     "id": 3,
     "name": "asa",
-    "race": "Strsdaing"
+    "race": "FAIRY"
   }
 ]
