@@ -1,0 +1,9 @@
+type Query {
+    "El campo no puede volver como nulo"
+    gameHello: String
+}
+
+type Game {
+    id: ID
+    title: String
+}
