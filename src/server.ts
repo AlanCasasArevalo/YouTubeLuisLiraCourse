@@ -3,23 +3,28 @@ import cors from 'cors'
 import compression from 'compression'
 import {createServer} from 'http';
 import { ApolloServer } from 'apollo-server-express'
-
 import expressPlayground from 'graphql-playground-middleware-express'
-
 import { schema } from './graphql'
+import Database from './database'
+import config from './config'
 
 async function init() {
 
-    const port = process.env.PORT || 3000
+    const port = config.port || 3000
     const app = express()
 
     app.use(cors())
 
     app.use(compression())
 
+    const database = async () => {
+        return new Database().connect()
+    }
+
     const server = new ApolloServer({
         schema,
-        introspection: true
+        introspection: true,
+        context: database
     })
 
     await server.start()

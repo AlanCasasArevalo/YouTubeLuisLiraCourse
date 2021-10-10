@@ -1,10 +1,15 @@
 import {IResolvers} from '@graphql-tools/utils'
 import {characters, games} from '../../data/data.json'
+import { Db } from 'mongodb'
 
 const charactersResolver: IResolvers = {
     Query: {
-        getCharacters() {
-            return characters
+        async getCharacters(root: void, args: void, context: Db) {
+
+            const charactersFromData = await context.collection('characters')
+                                            .find()
+                                            .toArray()
+            return charactersFromData
         },
         getCharacter(root: void, args: any) {
             const [character] = characters.filter(character => character._id === args._id)
