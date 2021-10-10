@@ -27,9 +27,17 @@ const charactersResolver: IResolvers = {
         }
     },
     Mutation: {
-        async addCharacter(_, {character}, {db}, info) {
-            console.log(`${character}`)
-            return 'Personaje agregado correctamente'
+        async addCharacter(_, {character}, context: Db, info) {
+
+            // guardar documento en base de datos
+            let saveResult = await context.collection('characters')
+                .insertOne(character)
+
+            // @ts-ignore
+            if (saveResult !== typeof 'undefined' && saveResult.acknowledged !== typeof 'undefined' && saveResult.acknowledged) {
+                return 'Personaje agregado correctamente'
+            }
+            return 'Personaje no guardado'
         }
     }
 }
