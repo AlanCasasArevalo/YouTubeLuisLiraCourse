@@ -3,9 +3,11 @@ type Query {
 }
 
 type Character {
-    id: ID
+    _id: ID
     name: String
     race: Race
+    gender: Gender
+    game: [Game]
 }
 
 enum Race {
@@ -13,3 +15,9 @@ enum Race {
     GERUDO
     FAIRY
 }
+
+enum Gender {
+    MALE
+    FEMALE
+}
+
