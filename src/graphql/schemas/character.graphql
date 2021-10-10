@@ -7,7 +7,7 @@ type Character {
     name: String
     race: Race
     gender: Gender
-    game: [Game]
+    games: [Game]
 }
 
 enum Race {
