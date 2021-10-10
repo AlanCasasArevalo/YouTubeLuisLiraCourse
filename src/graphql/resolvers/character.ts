@@ -1,9 +1,14 @@
 import {IResolvers} from '@graphql-tools/utils'
-import { characters, games } from '../../data/data.json'
+import {characters, games} from '../../data/data.json'
+
 const charactersResolver: IResolvers = {
     Query: {
         getCharacters() {
             return characters
+        },
+        getCharacter(root: void, args: any) {
+            const [character] = characters.filter(character => character._id === args._id)
+            return character
         }
     },
     Character: {
