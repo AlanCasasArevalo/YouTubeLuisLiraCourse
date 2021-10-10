@@ -1,9 +1,9 @@
 import {IResolvers} from '@graphql-tools/utils'
-import { mocks } from '../../mock'
+import { characters } from '../../data/data.json'
 const charactersResolver: IResolvers = {
     Query: {
         getCharacters() {
-            return mocks.characters
+            return characters
         }
     }
 }
