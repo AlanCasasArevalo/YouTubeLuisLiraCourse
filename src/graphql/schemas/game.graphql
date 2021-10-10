@@ -1,8 +1,3 @@
-type Query {
-    "El campo no puede volver como nulo"
-    gameHello: String
-}
-
 type Game {
     _id: ID
     title: String

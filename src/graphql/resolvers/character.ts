@@ -20,6 +20,12 @@ const charactersResolver: IResolvers = {
 
             return gameList
         }
+    },
+    Mutation: {
+        async addCharacter(_, {character}, {db}, info) {
+            console.log(`${character}`)
+            return 'Personaje agregado correctamente'
+        }
     }
 }
 

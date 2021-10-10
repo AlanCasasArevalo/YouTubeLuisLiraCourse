@@ -3,12 +3,23 @@ type Query {
     getCharacter(_id: ID): Character
 }
 
+type Mutation {
+    addCharacter(character: CharacterInput!): String!
+}
+
 type Character {
     _id: ID
     name: String
     race: Race
     gender: Gender
     games: [Game]
+}
+
+input CharacterInput {
+    name: String!
+    race: Race!
+    gender: Gender!
+    games: [String]!
 }
 
 enum Race {
